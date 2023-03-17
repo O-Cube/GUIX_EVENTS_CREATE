@@ -24,6 +24,7 @@
 #include "pin_mux.h"
 #include "clock_config.h"
 #include "board.h"
+
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
@@ -32,6 +33,7 @@
 #define CLOCK_TIMER        20
 
 #define BUFFER_SIZE     (50 * 1024)
+
 
 /*******************************************************************************
  * Variables
@@ -76,6 +78,7 @@ extern UINT gx_display_driver_imxrt10xx_565rgb_setup(GX_DISPLAY *display);
 VOID clock_update();
 VOID main_screen_widgets_enable_disable(INT status);
 VOID start_touch_thread(VOID);
+extern VOID start_periodic_timer(void);
 
 /*******************************************************************************
  * Code
@@ -131,7 +134,8 @@ void tx_application_define(void *first_unused_memory)
     tx_byte_pool_create(&memory_pool, "scratchpad", scratchpad, BUFFER_SIZE);
 
     guix_startup();
-    start_touch_thread();
+    // start_touch_thread();
+    start_periodic_timer();
 }
 
 void guix_startup(void)

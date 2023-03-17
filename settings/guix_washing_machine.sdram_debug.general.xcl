@@ -1,0 +1,19 @@
+"C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm\bin\armPROC.dll" 
+
+"C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm\bin\armJET.dll" 
+
+"C:\Users\obed.oyandut\OneDrive - D.Med Consulting GmbH\Documents\Azure_RTOS_threadx_demo\GUIX_EVENTS_CREATE_modification_2\sdram_debug\guix_washing_machine.out" 
+
+--plugin="C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm\bin\armbat.dll" 
+
+--device_macro="C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm/config/debugger/NXP/iMXRT.dmac" 
+
+--device_macro="C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm/config/debugger/NXP/iMXRT_Trace.dmac" 
+
+--macro="C:\Users\obed.oyandut\OneDrive - D.Med Consulting GmbH\Documents\Azure_RTOS_threadx_demo\GUIX_EVENTS_CREATE_modification_2/evkbimxrt1050/evkbimxrt1050_sdram_init.mac" 
+
+--flash_loader="C:\Program Files\IAR Systems\Embedded Workbench 9.1\arm/config/flashloader/NXP/FlashIMXRT1050_EVK_FlexSPI.board" 
+
+
+
+

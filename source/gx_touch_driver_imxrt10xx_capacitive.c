@@ -40,6 +40,8 @@ gx_generic_resistive_touch
 #include "tx_api.h"
 #include "gx_api.h"
 
+#include "sample_guix_washing_machine_specifications.h"  // addition
+
 #define BOARD_TOUCH_I2C LPI2C1
 
 /* Select USB1 PLL (480 MHz) as master lpi2c clock source */
@@ -57,6 +59,10 @@ gx_generic_resistive_touch
 #define MIN_DRAG_DELTA              10
 
 #define DEMO_STACK_SIZE             (4 * 1024)
+
+
+/* Determines whether touch panel IC is initialized of not. 1 means initialized */
+#define INITIALIZE_TOUCH_IC 0
 
 /* Define the touch thread control block and stack.  */
 static TX_THREAD touch_thread;
@@ -95,6 +101,15 @@ static int touch_state;
 
 static VOID touch_thread_entry(ULONG thread_input);
 
+/* Periodic timer entry function */
+static VOID periodic_timer_entry(ULONG input_param);
+
+/* Periodic timer block */
+TX_TIMER periodic_timer_block = {
+                                           .tx_timer_id = 1,
+                                           .tx_timer_name = "timer_1",
+};
+
 /**************************************************************************/
 /* called by application to fire off the touch screen driver thread       */
 VOID start_touch_thread(void)
@@ -103,6 +118,12 @@ VOID start_touch_thread(void)
     tx_thread_create(&touch_thread, "GUIX Touch Thread", touch_thread_entry, 0, touch_thread_stack,
                      sizeof(touch_thread_stack), GX_SYSTEM_THREAD_PRIORITY - 1, GX_SYSTEM_THREAD_PRIORITY - 1,
                      TX_NO_TIME_SLICE, TX_AUTO_START);
+}
+
+/* creates a periodic timer that expires every 100 ticks */
+VOID start_periodic_timer(VOID)
+{
+  tx_timer_create(&periodic_timer_block, "periodic_timer", periodic_timer_entry, 0, 100, 100, TX_AUTO_ACTIVATE);
 }
 
 /*******************************************************************************
@@ -263,8 +284,13 @@ static VOID touch_thread_entry(ULONG thread_input)
 {
     int prev_touch_state;
     int cur_touch_state;
+    
+ /* Prevent touch IC from initializing */
+#if INITIALIZE_TOUCH_IC != 0
 
     gx_touch_init();
+    
+#endif
 
     prev_touch_state = TOUCH_STATE_RELEASED;
 
@@ -364,3 +390,21 @@ static VOID touch_thread_entry(ULONG thread_input)
     }
 }
 #endif
+
+
+/*  periodic_timer_ entry function */
+static VOID periodic_timer_entry(ULONG input_param)
+{
+     GX_EVENT event;
+     event.gx_event_type = GX_SIGNAL(ID_BTN_TEMPERATURE, GX_EVENT_RADIO_SELECT);
+     event.gx_event_payload.gx_event_pointdata.gx_point_x = 12;
+     event.gx_event_payload.gx_event_pointdata.gx_point_y = 3;
+     event.gx_event_sender = 0;
+     event.gx_event_target = 0;
+     event.gx_event_display_handle = 0;
+     
+     
+     gx_system_event_send(&event);
+     
+     PRINTF("Inside timer function...\r\n");
+}
