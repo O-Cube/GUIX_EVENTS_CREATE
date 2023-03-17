@@ -77,9 +77,24 @@ VOID clock_update();
 VOID main_screen_widgets_enable_disable(INT status);
 VOID start_touch_thread(VOID);
 
+extern TX_SEMAPHORE semaphore;
+extern VOID create_semaphore(void);
+extern VOID press_button_thread(void);
+extern VOID button_interrupt_config(void);
+
+
 /*******************************************************************************
  * Code
  ******************************************************************************/
+/* configuration of button interrupt */
+void BOARD_USER_BUTTON_IRQ_HANDLER(void)
+{
+    /* clear the interrupt status */
+    GPIO_PortClearInterruptFlags(BOARD_USER_BUTTON_GPIO, 1U << BOARD_USER_BUTTON_GPIO_PIN);
+    tx_semaphore_put(&semaphore);
+    SDK_ISR_EXIT_BARRIER;
+}
+
 
 /* Define main entry point.  */
 int main(VOID)
@@ -92,6 +107,11 @@ int main(VOID)
 
     /* perform LCD initialization */
     gx_lcd_board_setup();
+    
+    /* button interrupt configuration */
+    button_interrupt_config();
+    
+    
 
     PRINTF("Start the GUIX washing machine example...\r\n");
 
@@ -131,7 +151,9 @@ void tx_application_define(void *first_unused_memory)
     tx_byte_pool_create(&memory_pool, "scratchpad", scratchpad, BUFFER_SIZE);
 
     guix_startup();
-    start_touch_thread();
+    // start_touch_thread();
+    create_semaphore();
+    press_button_thread();
 }
 
 void guix_startup(void)

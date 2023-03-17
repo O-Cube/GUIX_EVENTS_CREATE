@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>125226492</fileChecksum>
+    <configuration>
+        <name>flexspi_nor_sdram_debug</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>flexspi_nor_sdram_release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>sdram_debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\azure-rtos\binary\guix\cortex_m7\iar\libguix.a</file>
+            <file>$PROJ_DIR$\azure-rtos\binary\threadx\cortex_m7\iar\libthreadx.a</file>
+            <file>$PROJ_DIR$\azure-rtos\guix\common\inc\gx_display.h</file>
+            <file>$PROJ_DIR$\azure-rtos\guix\common\inc\gx_api.h</file>
+            <file>$PROJ_DIR$\azure-rtos\config\gx_user.h</file>
+            <file>$PROJ_DIR$\azure-rtos\config\tx_user.h</file>
+            <file>$PROJ_DIR$\azure-rtos\guix\ports\cortex_m7\iar\inc\gx_port.h</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\common\inc\tx_api.h</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\inc\tx_port.h</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_context_restore.s</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_context_save.s</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_interrupt_control.s</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_interrupt_disable.s</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\common\tx_initialize_low_level.c</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_system_return.s</file>
+            <file>$PROJ_DIR$\board\clock_config.h</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_schedule.s</file>
+            <file>$PROJ_DIR$\board\clock_config.c</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_interrupt_restore.s</file>
+            <file>$PROJ_DIR$\CMSIS\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_stack_build.s</file>
+            <file>$PROJ_DIR$\board\pin_mux.c</file>
+            <file>$PROJ_DIR$\CMSIS\cachel1_armv7.h</file>
+            <file>$PROJ_DIR$\CMSIS\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\board\board.c</file>
+            <file>$PROJ_DIR$\board\dcd.c</file>
+            <file>$PROJ_DIR$\board\dcd.h</file>
+            <file>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_timer_interrupt.s</file>
+            <file>$PROJ_DIR$\board\board.h</file>
+            <file>$PROJ_DIR$\board\display_support.h</file>
+            <file>$PROJ_DIR$\board\pin_mux.h</file>
+            <file>$PROJ_DIR$\component\serial_manager\fsl_component_serial_manager.c</file>
+            <file>$PROJ_DIR$\component\lists\fsl_component_generic_list.c</file>
+            <file>$PROJ_DIR$\CMSIS\cmsis_version.h</file>
+            <file>$PROJ_DIR$\component\serial_manager\fsl_component_serial_port_internal.h</file>
+            <file>$PROJ_DIR$\CMSIS\mpu_armv7.h</file>
+            <file>$PROJ_DIR$\component\uart\fsl_adapter_uart.h</file>
+            <file>$PROJ_DIR$\CMSIS\core_cm7.h</file>
+            <file>$PROJ_DIR$\device\fsl_device_registers.h</file>
+            <file>$PROJ_DIR$\component\serial_manager\fsl_component_serial_port_uart.c</file>
+            <file>$PROJ_DIR$\device\MIMXRT1052.h</file>
+            <file>$PROJ_DIR$\component\lists\fsl_component_generic_list.h</file>
+            <file>$PROJ_DIR$\component\uart\fsl_adapter_lpuart.c</file>
+            <file>$PROJ_DIR$\component\serial_manager\fsl_component_serial_manager.h</file>
+            <file>$PROJ_DIR$\device\MIMXRT1052_features.h</file>
+            <file>$PROJ_DIR$\component\serial_manager\fsl_component_serial_port_uart.h</file>
+            <file>$PROJ_DIR$\drivers\fsl_common.h</file>
+            <file>$PROJ_DIR$\device\system_MIMXRT1052.h</file>
+            <file>$PROJ_DIR$\drivers\fsl_clock.h</file>
+            <file>$PROJ_DIR$\drivers\fsl_common.c</file>
+            <file>$PROJ_DIR$\drivers\fsl_gpio.h</file>
+            <file>$PROJ_DIR$\drivers\fsl_iomuxc.h</file>
+            <file>$PROJ_DIR$\drivers\fsl_lpi2c.c</file>
+            <file>$PROJ_DIR$\drivers\fsl_lpi2c.h</file>
+            <file>$PROJ_DIR$\drivers\fsl_pxp.c</file>
+            <file>$PROJ_DIR$\drivers\fsl_common_arm.c</file>
+            <file>$PROJ_DIR$\drivers\fsl_gpio.c</file>
+            <file>$PROJ_DIR$\drivers\fsl_lpuart.c</file>
+            <file>$PROJ_DIR$\drivers\fsl_pxp.h</file>
+            <file>$PROJ_DIR$\drivers\fsl_elcdif.h</file>
+            <file>$PROJ_DIR$\MIMXRT1052\iar\MIMXRT1052xxxxx_sdram.icf</file>
+            <file>$PROJ_DIR$\drivers\fsl_clock.c</file>
+            <file>$PROJ_DIR$\drivers\fsl_lpuart.h</file>
+            <file>$PROJ_DIR$\device\system_MIMXRT1052.c</file>
+            <file>$PROJ_DIR$\drivers\fsl_elcdif.c</file>
+            <file>$PROJ_DIR$\drivers\fsl_common_arm.h</file>
+            <file>$PROJ_DIR$\source\sample_guix_washing_machine.gxp</file>
+            <file>$PROJ_DIR$\source\sample_guix_washing_machine_resources.h</file>
+            <file>$PROJ_DIR$\source\guix_washing_machine.h</file>
+            <file>$PROJ_DIR$\source\gx_display_driver_imxrt10xx_24xrgb.c</file>
+            <file>$PROJ_DIR$\source\gx_display_driver_imxrt10xx_565rgb.c</file>
+            <file>$PROJ_DIR$\source\gx_driver_imxrt10xx_irq.c</file>
+            <file>$PROJ_DIR$\source\gx_touch_driver_imxrt10xx_capacitive.c</file>
+            <file>$PROJ_DIR$\source\sample_guix_washing_machine_resources.c</file>
+            <file>$PROJ_DIR$\source\guix_washing_machine.c</file>
+            <file>$PROJ_DIR$\source\garments.c</file>
+            <file>$PROJ_DIR$\touchpanel\fsl_gt911.c</file>
+            <file>$PROJ_DIR$\source\sample_guix_washing_machine_specifications.c</file>
+            <file>$PROJ_DIR$\startup\startup_MIMXRT1052.s</file>
+            <file>$PROJ_DIR$\utilities\fsl_assert.c</file>
+            <file>$PROJ_DIR$\source\washer_on.c</file>
+            <file>$PROJ_DIR$\utilities\fsl_debug_console.h</file>
+            <file>$PROJ_DIR$\utilities\fsl_str.h</file>
+            <file>$PROJ_DIR$\touchpanel\fsl_gt911.h</file>
+            <file>$PROJ_DIR$\source\temperature.c</file>
+            <file>$PROJ_DIR$\touchpanel\fsl_ft5406_rt.c</file>
+            <file>$PROJ_DIR$\touchpanel\fsl_ft5406_rt.h</file>
+            <file>$PROJ_DIR$\source\sample_guix_washing_machine_specifications.h</file>
+            <file>$PROJ_DIR$\utilities\fsl_debug_console.c</file>
+            <file>$PROJ_DIR$\source\water_level.c</file>
+            <file>$PROJ_DIR$\utilities\fsl_str.c</file>
+            <file>$PROJ_DIR$\utilities\fsl_debug_console_conf.h</file>
+            <file>$PROJ_DIR$\video\fsl_dc_fb.h</file>
+            <file>$PROJ_DIR$\video\fsl_video_common.c</file>
+            <file>$PROJ_DIR$\video\fsl_dc_fb_elcdif.h</file>
+            <file>$PROJ_DIR$\video\fsl_dc_fb_elcdif.c</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\component\uart\fsl_adapter_lpuart.o</file>
+            <file>$PROJ_DIR$\xip\evkbimxrt1050_flexspi_nor_config.h</file>
+            <file>$PROJ_DIR$\xip\fsl_flexspi_nor_boot.h</file>
+            <file>$PROJ_DIR$\xip\evkbimxrt1050_flexspi_nor_config.c</file>
+            <file>$PROJ_DIR$\video\fsl_video_common.h</file>
+            <file>$PROJ_DIR$\xip\fsl_flexspi_nor_boot.c</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\sample_guix_washing_machine_specifications.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\gx_touch_driver_imxrt10xx_capacitive.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\touchpanel\fsl_ft5406_rt.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\drivers\fsl_lpuart.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\utilities\fsl_assert.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\board\clock_config.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\common\tx_initialize_low_level.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\drivers\fsl_lpi2c.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\temperature.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\gx_driver_imxrt10xx_irq.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\water_level.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\board\dcd.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\garments.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\drivers\fsl_gpio.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\washer_on.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\guix_washing_machine.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\drivers\fsl_pxp.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\sample_guix_washing_machine_resources.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\utilities\fsl_debug_console.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\utilities\fsl_str.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\source\gx_display_driver_imxrt10xx_565rgb.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\startup\startup_MIMXRT1052.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_interrupt_control.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\video\fsl_dc_fb_elcdif.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_context_restore.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\drivers\fsl_elcdif.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_stack_build.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\drivers\fsl_common.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\board\board.o</file>
+            <file>$PROJ_DIR$\sdram_debug\guix_washing_machine.out</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\board\pin_mux.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\component\serial_manager\fsl_component_serial_port_uart.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\drivers\fsl_clock.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\component\lists\fsl_component_generic_list.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\touchpanel\fsl_gt911.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\xip\fsl_flexspi_nor_boot.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\xip\evkbimxrt1050_flexspi_nor_config.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_context_save.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\device\system_MIMXRT1052.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\component\serial_manager\fsl_component_serial_manager.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_system_return.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\video\fsl_video_common.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_interrupt_disable.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_schedule.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_interrupt_restore.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_timer_interrupt.o</file>
+            <file>$PROJ_DIR$\sdram_debug\obj\drivers\fsl_common_arm.o</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tlv.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\intrinsics.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iar_intrinsics_common.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_float_setup.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\aarch32\iccarm_builtin.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\sdram_debug\list\guix_washing_machine.map</file>
+            <file>$TOOLKIT_DIR$\inc\c\errno.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 133 173</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_context_restore.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 128</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_context_save.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 141</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_interrupt_control.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 124</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_interrupt_disable.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 146</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\common\tx_initialize_low_level.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 108</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 7 8 5 155 168</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_system_return.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 144</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_schedule.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 147</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\board\clock_config.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 107</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 15 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 51</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_interrupt_restore.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 148</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_thread_stack_build.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 130</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\board\pin_mux.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 134</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 51 30</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\board\board.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 132</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 81 43 45 36 162 28 15 50 53 51</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\board\dcd.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 113</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 26 175 158 172 163 154 161</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\azure-rtos\threadx\ports\cortex_m7\iar\src\tx_timer_interrupt.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 149</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\component\serial_manager\fsl_component_serial_manager.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 143</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 152 158 172 163 154 161 159 165 43 46 125 126 175 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 45 36 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\component\lists\fsl_component_generic_list.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 137</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\component\serial_manager\fsl_component_serial_port_uart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 135</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 43 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 45 36 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\component\uart\fsl_adapter_lpuart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 96</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 62 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 36</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\drivers\fsl_common.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 131</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\drivers\fsl_lpi2c.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 109</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 53 164 158 172 163 154 161 159 38 40 37 175 33 23 19 171 35 22 47 44 46 125 126 152 165 153 166 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\drivers\fsl_pxp.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 118</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 58 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\drivers\fsl_common_arm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 150</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\drivers\fsl_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 115</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\drivers\fsl_lpuart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 105</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 62 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\drivers\fsl_clock.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 136</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 48 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\device\system_MIMXRT1052.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 142</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 175 158 172 163 154 161 38 40 37 33 23 19 171 35 22 47 44</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\drivers\fsl_elcdif.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 129</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 59 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\gx_display_driver_imxrt10xx_565rgb.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 122</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 156 158 172 163 154 161 159 50 46 125 126 175 152 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 15 30 59 81 43 45 36 162 28 29 92 100 58 3 7 8 5 155 168 6 4 2</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\gx_driver_imxrt10xx_irq.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 111</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 7 8 5 155 168</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\gx_touch_driver_imxrt10xx_capacitive.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 103</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 53 164 158 172 163 154 161 159 38 40 37 175 33 23 19 171 35 22 47 44 46 125 126 152 165 153 166 65 48 28 15 50 81 43 45 36 162 29 92 100 83 7 8 5 155 168 3 6 4 87</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\sample_guix_washing_machine_resources.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 119</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 3 7 8 5 153 158 172 163 154 161 159 166 152 165 155 171 168 6 4 67</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\guix_washing_machine.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 117</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 7 8 5 153 158 172 163 154 161 159 166 152 165 155 171 168 3 6 4 68 156 67 87 81 46 125 126 175 164 38 40 37 33 23 19 35 22 47 44 65 48 43 45 36 162 30 15 28 50</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\garments.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 114</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 68 156 158 172 163 154 161 159 3 7 8 5 153 166 152 165 155 171 168 6 4 67 87</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\touchpanel\fsl_gt911.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 138</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\sample_guix_washing_machine_specifications.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 102</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 164 158 172 163 154 161 159 67 3 7 8 5 153 166 152 165 155 171 168 6 4 87</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\startup\startup_MIMXRT1052.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 123</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\utilities\fsl_assert.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 106</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 81 43 45 36 162</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\washer_on.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 116</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 68 156 158 172 163 154 161 159 3 7 8 5 153 166 152 165 155 171 168 6 4 67 87</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\temperature.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 110</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 68 156 158 172 163 154 161 159 3 7 8 5 153 166 152 165 155 171 168 6 4 67 87</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\touchpanel\fsl_ft5406_rt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 104</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 53 86</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\utilities\fsl_debug_console.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 120</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 162 153 158 172 163 154 161 159 166 91 46 125 126 175 152 165 164 38 40 37 33 23 19 171 35 22 47 44 65 48 82 43 45 36 81</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\source\water_level.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 112</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 68 156 158 172 163 154 161 159 3 7 8 5 153 166 152 165 155 171 168 6 4 67 87</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\utilities\fsl_str.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 121</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 157 158 172 163 154 161 170 162 153 159 166 174 82 46 125 126 175 152 165 164 38 40 37 33 23 19 171 35 22 47 44 65 48 81 43 45 36</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\video\fsl_video_common.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 145</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 100 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\video\fsl_dc_fb_elcdif.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 127</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 94 92 100 46 125 158 172 163 154 161 126 175 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 59</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\xip\evkbimxrt1050_flexspi_nor_config.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 140</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 97 175 158 172 163 154 161 126 46 125 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\xip\fsl_flexspi_nor_boot.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 139</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 98 175 158 172 163 154 161 46 125 126 152 159 165 153 166 164 38 40 37 33 23 19 171 35 22 47 44 65 48 28 15 50</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\sdram_debug\guix_washing_machine.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 173</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 60 132 107 113 140 96 106 136 131 150 137 143 135 127 120 129 139 104 115 138 109 105 118 121 145 114 117 122 111 103 0 1 134 119 102 123 142 110 108 128 141 124 146 148 147 130 144 149 116 112 167 169 151 160</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>sdram_release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

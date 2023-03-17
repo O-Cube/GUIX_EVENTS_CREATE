@@ -40,6 +40,11 @@ gx_generic_resistive_touch
 #include "tx_api.h"
 #include "gx_api.h"
 
+#include "sample_guix_washing_machine_specifications.h"
+
+/* Initialize touch panel or not  */
+#define TOUCH_PANEL_INITIALIZE  0
+
 #define BOARD_TOUCH_I2C LPI2C1
 
 /* Select USB1 PLL (480 MHz) as master lpi2c clock source */
@@ -61,6 +66,22 @@ gx_generic_resistive_touch
 /* Define the touch thread control block and stack.  */
 static TX_THREAD touch_thread;
 static ULONG touch_thread_stack[DEMO_STACK_SIZE / sizeof(ULONG)];
+
+/* Define semaphore to synchronize interrupt and thread */
+TX_SEMAPHORE semaphore;
+/* creates semaphore  */
+VOID create_semaphore(void);
+VOID press_button_thread(void);
+
+/* define press button hread */
+static TX_THREAD press_button;
+static ULONG press_thread_stack[DEMO_STACK_SIZE / sizeof(ULONG)];
+
+/* create gx event and send to gx system queue */
+static VOID create_press_button_gx_event(void);
+
+/* configure interrupt for button */
+VOID button_interrupt_config(void);
 
 static int last_pos_x;
 static int last_pos_y;
@@ -94,6 +115,8 @@ static int touch_state;
 #endif
 
 static VOID touch_thread_entry(ULONG thread_input);
+/* press button entry function */
+static VOID press_button_entry(ULONG press_input);
 
 /**************************************************************************/
 /* called by application to fire off the touch screen driver thread       */
@@ -103,6 +126,18 @@ VOID start_touch_thread(void)
     tx_thread_create(&touch_thread, "GUIX Touch Thread", touch_thread_entry, 0, touch_thread_stack,
                      sizeof(touch_thread_stack), GX_SYSTEM_THREAD_PRIORITY - 1, GX_SYSTEM_THREAD_PRIORITY - 1,
                      TX_NO_TIME_SLICE, TX_AUTO_START);
+}
+
+/* Create semaphore  */
+VOID create_semaphore(void)
+{
+  tx_semaphore_create(&semaphore, "press_button_semaphore", 0x01);
+}
+
+/* process thread events fron pressed button */
+VOID press_button_thread(void)
+{
+    tx_thread_create(&press_button, "Press Button Thread", press_button_entry, 0, press_thread_stack, sizeof(press_thread_stack), 4, 3, TX_NO_TIME_SLICE, TX_AUTO_START);
 }
 
 /*******************************************************************************
@@ -264,7 +299,10 @@ static VOID touch_thread_entry(ULONG thread_input)
     int prev_touch_state;
     int cur_touch_state;
 
+ /* Prevent initialization of touch panel IC */
+#if TOUCH_PANEL_INITIALIZE != 0
     gx_touch_init();
+#endif
 
     prev_touch_state = TOUCH_STATE_RELEASED;
 
@@ -364,3 +402,55 @@ static VOID touch_thread_entry(ULONG thread_input)
     }
 }
 #endif
+
+
+
+/* definition of press button entry function */
+static VOID press_button_entry(ULONG press_input)
+{ 
+  UINT status;
+  
+  while(1)
+  {
+    status = tx_semaphore_get(&semaphore, TX_WAIT_FOREVER);
+    if (status == TX_SUCCESS)
+    {
+      create_press_button_gx_event();
+    }
+  }
+}
+
+/* definition of press button event */
+static VOID create_press_button_gx_event(void)
+{
+     GX_EVENT event;
+     event.gx_event_type = GX_SIGNAL(ID_BTN_TEMPERATURE, GX_EVENT_RADIO_SELECT);
+     event.gx_event_payload.gx_event_pointdata.gx_point_x = 12;
+     event.gx_event_payload.gx_event_pointdata.gx_point_y = 3;
+     event.gx_event_sender = 0;
+     event.gx_event_target = 0;
+     event.gx_event_display_handle = 0;
+     
+     
+     gx_system_event_send(&event);
+     
+     PRINTF("Inside timer function...\r\n");
+}
+
+/* interrupt configuration of button */
+VOID button_interrupt_config(void)
+{
+  /* Define the init structure for the input switch pin */
+    gpio_pin_config_t sw_config = {
+        kGPIO_DigitalInput,
+        0,
+        kGPIO_IntRisingEdge,
+    };
+  
+  /* Init input switch GPIO. */
+    EnableIRQ(BOARD_USER_BUTTON_IRQ);
+    GPIO_PinInit(BOARD_USER_BUTTON_GPIO, BOARD_USER_BUTTON_GPIO_PIN, &sw_config);
+
+    /* Enable GPIO pin interrupt */
+    GPIO_PortEnableInterrupts(BOARD_USER_BUTTON_GPIO, 1U << BOARD_USER_BUTTON_GPIO_PIN);
+}
